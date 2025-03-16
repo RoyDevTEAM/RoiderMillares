@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roider Millares | Desarrollador Web & Ingeniero de Software</title>
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Portafolio profesional de Roider Millares, desarrollador web especializado en Angular, .NET Core y APIs REST con base en Santa Cruz, Bolivia.">
+    <meta name="keywords" content="desarrollador web, programador, angular, .net core, api rest, tailwind, santa cruz, bolivia, desarrollo de software">
+    <meta name="author" content="Roider Millares">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Roider Millares | Desarrollador Web & Ingeniero de Software">
+    <meta property="og:description" content="Especialista en Angular, .NET Core y APIs REST. Vea mi portafolio de proyectos de desarrollo web.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.roidermillares.com">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        /* Personalización de estilos */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .bg-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+        }
+        .tech-badge {
+            transition: transform 0.2s ease;
+        }
+        .tech-badge:hover {
+            transform: scale(1.1);
+        }
+        /* Custom animation for hamburger menu */
+        .line {
+            transition: all 0.3s ease;
+        }
+        .open .line1 {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .open .line2 {
+            opacity: 0;
+        }
+        .open .line3 {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-gradient">RM</a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="nav-link font-medium">Inicio</a>
+                <a href="#about" class="nav-link font-medium">Sobre mí</a>
+                <a href="#projects" class="nav-link font-medium">Proyectos</a>
+                <a href="#skills" class="nav-link font-medium">Habilidades</a>
+                <a href="#contact" class="nav-link font-medium">Contacto</a>
+                <a href="#contact" class="bg-gradient text-white px-4 py-2 rounded-lg font-medium transition-all hover:shadow-lg">Contratame</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center" id="menuBtn">
+                <div class="w-6 flex flex-col space-y-1.5 cursor-pointer">
+                    <span class="line line1 block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                    <span class="line line2 block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                    <span class="line line3 block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 pt-20 px-6 hidden flex-col space-y-6 md:hidden">
+            <a href="#home" class="text-xl font-medium py-2 border-b border-gray-200">Inicio</a>
+            <a href="#about" class="text-xl font-medium py-2 border-b border-gray-200">Sobre mí</a>
+            <a href="#projects" class="text-xl font-medium py-2 border-b border-gray-200">Proyectos</a>
+            <a href="#skills" class="text-xl font-medium py-2 border-b border-gray-200">Habilidades</a>
+            <a href="#contact" class="text-xl font-medium py-2 border-b border-gray-200">Contacto</a>
+            <a href="#contact" class="bg-gradient text-white px-6 py-3 rounded-lg font-medium text-center mt-4">Contratame</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-10" data-aos="fade-right" data-aos-duration="1000">
+                    <h4 class="text-blue-600 font-semibold mb-3">¡Hola! Soy</h4>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Roider <span class="text-gradient">Millares</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 mb-6">Desarrollador de Software & Investigador</h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Especialista en desarrollo web con Angular, APIs REST y .NET Core.
+                        Creando soluciones digitales innovadoras desde Santa Cruz, Bolivia.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-gradient text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg flex items-center">
+                            <span>Ver proyectos</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-medium transition-all hover:bg-blue-50">
+                            Contactame
+                        </a>
+                    </div>
+                    <div class="flex mt-10 space-x-4">
+                        <a href="https://github.com/RoyDevTEAM" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-github text-2xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/roys-millares-1b26572a3/" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="roydermillares84@gmail.com" class="text-gray-600 hover:text-blue-600 transition-colors">
+                            <i class="fas fa-envelope text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="relative">
+                        <div class="absolute -inset-0.5 bg-gradient rounded-full blur-lg opacity-75"></div>
+                        <img src="https://roydevteam.github.io/ROY.MILLARES/assets/perfil.jpeg" alt="Roider Millares" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white relative z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre <span class="text-gradient">mí</span></h2>
+                <div class="w-24 h-1 bg-gradient mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-4">Perfil Profesional</h3>
+                    <p class="text-gray-600 mb-4">
+                        Soy un desarrollador de software, investigador y estudiante de ingeniería basado en Santa Cruz, Bolivia. 
+                        Actualmente colaboro con la Facultad de Ingeniería de UPDS en proyectos de desarrollo web e investigación.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Me especializo en el desarrollo de aplicaciones web, APIs REST, sistemas de gestión académica
+                        y sistemas para eventos. También tengo interés en la aplicación de inteligencia artificial en la industria.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div>
+                            <p class="font-medium">Nombre:</p>
+                            <p class="text-gray-600">Roider Millares</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Ubicación:</p>
+                            <p class="text-gray-600">Santa Cruz, Bolivia</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Rol:</p>
+                            <p class="text-gray-600">Desarrollador de Software</p>
+                        </div>
+                        <div>
+                            <p class="font-medium">Educación:</p>
+                            <p class="text-gray-600">Ing. en Sistemas - UPDS</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="bg-gradient text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg inline-flex items-center">
+                        <span>Descargar CV</span>
+                        <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-6">Experiencia y Formación</h3>
+                    
+                    <!-- Experience Timeline -->
+                    <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-blue-400 before:via-blue-500 before:to-purple-500">
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                                <i class="fas fa-code text-sm"></i>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-lg bg-white shadow-md">
+                                <div class="font-bold text-blue-600">Desarrollo del Portafolio DevTeam UPDS</div>
+                                <div class="text-sm text-gray-500">2023 - Presente</div>
+                                <div class="mt-1 text-gray-600">Optimización de portafolio con Angular y Tailwind CSS</div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                                <i class="fas fa-graduation-cap text-sm"></i>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-lg bg-white shadow-md">
+                                <div class="font-bold text-blue-600">Ingeniería en Sistemas - UPDS</div>
+                                <div class="text-sm text-gray-500">2020 - Presente</div>
+                                <div class="mt-1 text-gray-600">Formación en desarrollo de software y sistemas</div>
+                            </div>
+                        </div>
+                        
+                        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                                <i class="fas fa-briefcase text-sm"></i>
+                            </div>
+                            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-lg bg-white shadow-md">
+                                <div class="font-bold text-blue-600">Desarrollo API REST SisLabApi</div>
+                                <div class="text-sm text-gray-500">2022</div>
+                                <div class="mt-1 text-gray-600">API para gestión de laboratorios con .NET Core</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mis <span class="text-gradient">Proyectos</span></h2>
+                <div class="w-24 h-1 bg-gradient mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Una muestra de mi trabajo como desarrollador de software, incluyendo proyectos académicos y profesionales.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/devteam.png" alt="Portafolio Web DevTeam UPDS" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-2">Portafolio Web DevTeam UPDS</h3>
+                        <p class="text-gray-600 mb-4">
+                            Sitio web que promueve la innovación y el aprendizaje en tecnología, con secciones de artículos, cursos, proyectos y equipo.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Angular</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">FontAwesome</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Vercel</span>
+                        </div>
+                        <a href="#" class="flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            <span>Ver detalles</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+              <!-- Proyecto: Sistema de Ventas para la Tienda San José -->
+<div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+    <div class="h-56 overflow-hidden">
+      <img src="assets/sanjose.png" alt="Sistema de Ventas para la Tienda San José" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <div class="p-6">
+      <h3 class="text-xl font-bold text-blue-600 mb-2">Sistema de Ventas San José</h3>
+      <p class="text-gray-600 mb-4">
+        Sistema de gestión de ventas desarrollado para la Tienda San José. Facilita y automatiza las operaciones diarias de la tienda.
+      </p>
+      <div class="flex flex-wrap gap-2 mb-6">
+        <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Angular v17.3.0</span>
+        <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Firebase</span>
+      </div>
+      <a href="#" class="flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+        <span>Ver detalles</span>
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </div>
+  
+
+               <!-- Proyecto: Sistema de Reservas de Hotel -->
+<div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+    <div class="h-56 overflow-hidden">
+        <img src="/api/placeholder/600/400" alt="Sistema de Reservas de Hotel" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">Sistema de Reservas de Hotel</h3>
+        <p class="text-gray-600 mb-4">
+            Sistema de gestión de reservas. Permite administrar usuarios, habitaciones, reservas y pagos de manera eficiente.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">PHP</span>
+            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">MySQL</span>
+            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">XAMPP</span>
+        </div>
+        <a href="#" class="flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+            <span>Ver detalles</span>
+            <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+</div>
+
+
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <div class="h-56 overflow-hidden">
+                        <img src="assets/perlas.png" alt="Sistema de Reservas Las Perlas" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-2">Sistema de Reservas "Las Perlas"</h3>
+                        <p class="text-gray-600 mb-4">
+                            Plataforma para la gestión de reservas de eventos como bodas, graduaciones y cumpleaños con personalización de paquetes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Angular</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">.NET Core</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Entity Framework</span>
+                            <span class="tech-badge text-xs bg-blue-100 text-blue-800 px-3 py-1 rounded-full">SQL Server</span>
+                        </div>
+                        <a href="#" class="flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                            <span>Ver detalles</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors">
+                    <span>Ver todos los proyectos</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- JavaScript para Formulario de Contacto -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obtener valores del formulario
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Validación básica
+                if (!name || !email || !subject || !message) {
+                    alert('Por favor, completa todos los campos del formulario.');
+                    return;
+                }
+                
+                // Aquí normalmente enviarías los datos a tu backend
+                // Por ahora, solo mostraremos un mensaje de éxito
+                alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
+                
+                // Resetear el formulario
+                contactForm.reset();
+            });
+        }
+    });
+</script>         
+
+            
+            
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient rounded-full text-white flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<head></head>
+    <!-- JavaScript and AOS Configuration -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // AOS initialization
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false,
+                offset: 100
+            });
+            
+            // Mobile menu toggle
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            menuBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuBtn.classList.remove('active');
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.classList.remove('active');
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+            
+            // Back to top button functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.remove('opacity-0', 'invisible');
+                    backToTopBtn.classList.add('opacity-100');
+                } else {
+                    backToTopBtn.classList.add('opacity-0', 'invisible');
+                    backToTopBtn.classList.remove('opacity-100');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Form submission
+            const newsletterForm = document.querySelector('footer form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    
+                    if (emailInput.value.trim() !== '') {
+                        // Aquí puedes agregar código para enviar el email a tu backend
+                        alert('¡Gracias por suscribirte a mi newsletter!');
+                        emailInput.value = '';
+                    } else {
+                        alert('Por favor ingresa un email válido');
+                    }
+                });
+            }
+            
+            // Lazy load images
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                lazyImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            } else {
+                // Fallback para navegadores que no soportan Intersection Observer
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                });
+            }
+            
+            // Filtros de proyectos
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            if (filterButtons.length > 0) {
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filterValue = this.getAttribute('data-filter');
+                        
+                        // Activar botón seleccionado
+                        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-gradient', 'text-white'));
+                        this.classList.add('active', 'bg-gradient', 'text-white');
+                        
+                        // Filtrar proyectos
+                        projectCards.forEach(card => {
+                            if (filterValue === 'all') {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.classList.remove('opacity-0');
+                                }, 50);
+                            } else if (card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.classList.remove('opacity-0');
+                                }, 50);
+                            } else {
+                                card.classList.add('opacity-0');
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+            }
+        });
+    </script>
+        <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Mis <span class="text-gradient">Habilidades</span></h2>
+                <div class="w-24 h-1 bg-gradient mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Tecnologías y herramientas con las que trabajo para crear soluciones digitales innovadoras.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Technical Skills -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-code mr-3 text-blue-600"></i>
+                        <span>Habilidades Técnicas</span>
+                    </h3>
+
+                    <div class="space-y-6">
+                        <!-- Skill 1 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Angular</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gradient h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">.NET Core</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gradient h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">HTML/CSS/JavaScript</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gradient h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">SQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gradient h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Tailwind CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-gradient h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Skills -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-sm" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-briefcase mr-3 text-blue-600"></i>
+                        <span>Habilidades Profesionales</span>
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Skill 1 -->
+                        <div class="text-center">
+                            <div class="radial-progress mx-auto" style="--value: 90;">
+                                <div class="relative w-24 h-24">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                        <circle class="text-blue-600" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="25.12" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                    </svg>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold">90%</div>
+                                </div>
+                                <p class="mt-3 font-medium">Resolución de Problemas</p>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="text-center">
+                            <div class="radial-progress mx-auto" style="--value: 85;">
+                                <div class="relative w-24 h-24">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                        <circle class="text-blue-600" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="37.68" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                    </svg>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold">85%</div>
+                                </div>
+                                <p class="mt-3 font-medium">Trabajo en Equipo</p>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="text-center">
+                            <div class="radial-progress mx-auto" style="--value: 80;">
+                                <div class="relative w-24 h-24">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                        <circle class="text-blue-600" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="50.24" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                    </svg>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold">80%</div>
+                                </div>
+                                <p class="mt-3 font-medium">Gestión de Proyectos</p>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="text-center">
+                            <div class="radial-progress mx-auto" style="--value: 75;">
+                                <div class="relative w-24 h-24">
+                                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                                        <circle class="text-gray-200" stroke-width="10" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                        <circle class="text-blue-600" stroke-width="10" stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="40" cx="50" cy="50"/>
+                                    </svg>
+                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xl font-semibold">75%</div>
+                                </div>
+                                <p class="mt-3 font-medium">Comunicación</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies I Use -->
+            <div class="mt-16" data-aos="fade-up" data-aos-duration="1000">
+                <h3 class="text-2xl font-semibold mb-10 text-center">Tecnologías que utilizo</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-angular text-4xl text-red-600"></i>
+                        </div>
+                        <p class="font-medium">Angular</p>
+                    </div>
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-js-square text-4xl text-yellow-500"></i>
+                        </div>
+                        <p class="font-medium">JavaScript</p>
+                    </div>
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-html5 text-4xl text-orange-600"></i>
+                        </div>
+                        <p class="font-medium">HTML5</p>
+                    </div>
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-css3-alt text-4xl text-blue-600"></i>
+                        </div>
+                        <p class="font-medium">CSS3</p>
+                    </div>
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-database text-4xl text-gray-700"></i>
+                        </div>
+                        <p class="font-medium">SQL Server</p>
+                    </div>
+                    <div class="tech-item text-center">
+                        <div class="w-20 h-20 bg-white rounded-xl shadow-sm flex items-center justify-center mx-auto mb-3">
+                            <i class="fab fa-github text-4xl text-gray-800"></i>
+                        </div>
+                        <p class="font-medium">GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Contacta<span class="text-gradient">me</span></h2>
+                <div class="w-24 h-1 bg-gradient mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    ¿Tienes un proyecto en mente? Estoy disponible para colaborar en nuevas oportunidades.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10">
+                <!-- Contact Info -->
+                <div class="md:w-2/5" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-6">Información de Contacto</h3>
+                    <p class="text-gray-600 mb-8">
+                        No dudes en contactarme para discutir sobre tu proyecto o cualquier consulta que tengas.
+                        Estoy disponible para trabajar en proyectos de desarrollo web, aplicaciones móviles y sistemas de gestión.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="flex items-start">
+                            <div class="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Ubicación</h4>
+                                <p class="text-gray-600">Santa Cruz de la Sierra, Bolivia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600">roider.millares@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Teléfono</h4>
+                                <p class="text-gray-600">+591 77788899</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gradient w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 mr-4">
+                                <i class="fas fa-globe text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Sitio Web</h4>
+                                <p class="text-gray-600">www.roidermillares.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-white w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-white w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="bg-white w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-white w-10 h-10 rounded-full shadow-sm flex items-center justify-center text-blue-600 hover:bg-blue-50 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="md:w-3/5" data-aos="fade-left" data-aos-duration="1000">
+                    <h3 class="text-2xl font-semibold mb-6">Envíame un Mensaje</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Nombre</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu email">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Asunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Asunto del mensaje">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Mensaje</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tu mensaje"></textarea>
+                        </div>
+                        <button type="submit" class="bg-gradient text-white px-8 py-3 rounded-lg font-medium transition-all hover:shadow-lg inline-flex items-center">
+                            <span>Enviar Mensaje</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-between">
+                <!-- About Column -->
+                <div class="w-full md:w-1/3 mb-10 md:mb-0 pr-4">
+                    <h3 class="text-2xl font-bold mb-6">Roider <span class="text-blue-400">Millares</span></h3>
+                    <p class="text-gray-400 mb-6">
+                        Desarrollador de Software e Investigador basado en Santa Cruz, Bolivia.
+                        Especializado en desarrollo web con Angular, APIs REST y .NET Core.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/roys-millares-1b26572a3/" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/RoyDevTEAM" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links Column -->
+                <div class="w-full md:w-1/4 mb-10 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Sobre mí</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Habilidades</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="w-full md:w-1/4 mb-10 md:mb-0">
+                    <h4 class="text-xl font-semibold mb-6">Servicios</h4>
+                    <ul class="space-y-3">
+                        <li class="text-gray-400">Desarrollo Web</li>
+                        <li class="text-gray-400">Desarrollo de APIs</li>
+                        <li class="text-gray-400">Sistemas de Gestión</li>
+                        <li class="text-gray-400">Consultoría Técnica</li>
+                        <li class="text-gray-400">Investigación</li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Column -->
+                <div class="w-full md:w-1/6">
+                    <h4 class="text-xl font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Suscríbete para recibir actualizaciones sobre mis proyectos.</p>
+                    <form>
+                        <div class="flex flex-col space-y-3">
+                            <input type="email" placeholder="Tu email" class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button type="submit" class="bg-gradient text-white px-4 py-2 rounded-lg font-medium transition-all hover:shadow-lg">
+                                Suscribirse
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-center md:text-left mb-4 md:mb-0">
+                    &copy; 2025 Roider Millares. Todos los derechos reservados.
+                </p>
+                <div>
+                    <ul class="flex space-x-6 justify-center md:justify-end">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Términos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
