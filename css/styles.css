@@ -1,0 +1,30 @@
+  /* Personalización de estilos */
+  body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+.bg-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+.text-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
+}
+.tech-badge {
+    transition: transform 0.2s ease;
+}
+.tech-badge:hover {
+    transform: scale(1.1);
+}

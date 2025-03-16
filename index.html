@@ -46,104 +46,50 @@
 
 <!-- AOS Animation Library -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
+<link rel="stylesheet" href="Css/styles.css">
     <style>
-        /* Personalización de estilos */
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .bg-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.3);
-        }
-        .tech-badge {
-            transition: transform 0.2s ease;
-        }
-        .tech-badge:hover {
-            transform: scale(1.1);
-        }
-        /* Custom animation for hamburger menu */
-        .line {
-            transition: all 0.3s ease;
-        }
-        .open .line1 {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .open .line2 {
-            opacity: 0;
-        }
-        .open .line3 {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+      
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
     <header class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-bold text-gradient">RM</a>
-
-            <!-- Desktop Navigation -->
+            <a href="#inicio" class="text-xl font-bold text-gradient">RM</a>
+            
+            <!-- Navegación del escritorio -->
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#home" class="nav-link font-medium">Inicio</a>
-                <a href="#about" class="nav-link font-medium">Sobre mí</a>
-                <a href="#projects" class="nav-link font-medium">Proyectos</a>
-                <a href="#skills" class="nav-link font-medium">Habilidades</a>
-                <a href="#contact" class="nav-link font-medium">Contacto</a>
-                <a href="#contact" class="bg-gradient text-white px-4 py-2 rounded-lg font-medium transition-all hover:shadow-lg">Contratame</a>
+                <a href="#inicio" class="nav-link font-medium">Inicio</a>
+                <a href="#acerca" class="nav-link font-medium">Sobre mí</a>
+                <a href="#proyectos" class="nav-link font-medium">Proyectos</a>
+                <a href="#habilidades" class="nav-link font-medium">Habilidades</a>
+                <a href="#contacto" class="nav-link font-medium">Contacto</a>
+                <a href="#contacto" class="bg-gradient text-white px-4 py-2 rounded-lg font-medium transition-all hover:shadow-lg">Contacto</a>
             </div>
-
-            <!-- Mobile Menu Button -->
+    
+            <!-- Botón de menú móvil -->
             <div class="md:hidden flex items-center" id="menuBtn">
                 <div class="w-6 flex flex-col space-y-1.5 cursor-pointer">
-                    <span class="line line1 block w-full h-0.5 bg-blue-600 rounded-full"></span>
-                    <span class="line line2 block w-full h-0.5 bg-blue-600 rounded-full"></span>
-                    <span class="line line3 block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                    <span class="block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                    <span class="block w-full h-0.5 bg-blue-600 rounded-full"></span>
+                    <span class="block w-full h-0.5 bg-blue-600 rounded-full"></span>
                 </div>
             </div>
         </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="fixed inset-0 bg-white z-40 pt-20 px-6 hidden flex-col space-y-6 md:hidden">
-            <a href="#home" class="text-xl font-medium py-2 border-b border-gray-200">Inicio</a>
-            <a href="#about" class="text-xl font-medium py-2 border-b border-gray-200">Sobre mí</a>
-            <a href="#projects" class="text-xl font-medium py-2 border-b border-gray-200">Proyectos</a>
-            <a href="#skills" class="text-xl font-medium py-2 border-b border-gray-200">Habilidades</a>
-            <a href="#contact" class="text-xl font-medium py-2 border-b border-gray-200">Contacto</a>
-            <a href="#contact" class="bg-gradient text-white px-6 py-3 rounded-lg font-medium text-center mt-4">Contratame</a>
+    
+        <!-- Menú móvil -->
+        <div id="mobileMenu" class="fixed inset-0 z-40 pt-20 px-6 hidden flex-col space-y-6 md:hidden bg-blue-50">
+            <button id="closeMenu" class="absolute top-5 right-6 text-2xl text-gray-600 hover:text-red-500">
+                &times;
+            </button>
+            <a href="#inicio" class="text-xl font-medium py-2 border-b border-gray-200">Inicio</a>
+            <a href="#acerca" class="text-xl font-medium py-2 border-b border-gray-200">Sobre mí</a>
+            <a href="#proyectos" class="text-xl font-medium py-2 border-b border-gray-200">Proyectos</a>
+            <a href="#habilidades" class="text-xl font-medium py-2 border-b border-gray-200">Habilidades</a>
+            <a href="#contacto" class="text-xl font-medium py-2 border-b border-gray-200">Contacto</a>
+            <a href="#contacto" class="bg-gradient text-white px-6 py-3 rounded-lg font-medium text-center mt-4">Contrátame</a>
         </div>
     </header>
+    
 
     <!-- Hero Section -->
     <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28">
@@ -422,12 +368,11 @@
             
             
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top Button 
     <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-gradient rounded-full text-white flex items-center justify-center shadow-lg transition-all opacity-0 invisible">
         <i class="fas fa-arrow-up"></i>
-    </button>
+    </button>-->
 
-<head></head>
     <!-- JavaScript and AOS Configuration -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -442,30 +387,34 @@
                 offset: 100
             });
             
-            // Mobile menu toggle
-            const menuBtn = document.getElementById('menuBtn');
-            const mobileMenu = document.getElementById('mobileMenu');
-            
-            menuBtn.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileMenu.classList.toggle('hidden');
-                mobileMenu.classList.toggle('flex');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuBtn.classList.remove('active');
-                    mobileMenu.classList.add('hidden');
-                    menuBtn.classList.remove('active');
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('flex');
-                });
-            });
+           // Alternar menú móvil
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+// Abrir menú
+menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+});
+
+// Cerrar menú al hacer clic en la "X"
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+});
+
+// Cerrar el menú móvil al hacer clic en un enlace
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+    });
+});
+
             
             // Back to top button functionality
-            const backToTopBtn = document.getElementById('backToTop');
+           /* const backToTopBtn = document.getElementById('backToTop');
             
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
@@ -482,7 +431,7 @@
                     top: 0,
                     behavior: 'smooth'
                 });
-            });
+            });*/
             
             // Form submission
             const newsletterForm = document.querySelector('footer form');
@@ -788,7 +737,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Email</h4>
-                                <p class="text-gray-600">roider.millares@email.com</p>
+                                <p class="text-gray-600">roidermillares84@gmail.com</p>
                             </div>
                         </div>
 
@@ -798,7 +747,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Teléfono</h4>
-                                <p class="text-gray-600">+591 77788899</p>
+                                <p class="text-gray-600">+591 69295703</p>
                             </div>
                         </div>
 
@@ -808,7 +757,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold mb-1">Sitio Web</h4>
-                                <p class="text-gray-600">www.roidermillares.com</p>
+                                <p class="text-gray-600">roydevteam.github.io/ROY.MILLARES</p>
                             </div>
                         </div>
                     </div>
